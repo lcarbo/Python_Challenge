@@ -3,8 +3,10 @@ import csv
 
 # PyBankFile = '/Users/lilycarbonara/Desktop/Python_Challenge/PyBank/Resources_PyBank/budget_data.csv'
 
+#set the file path 
 PyBankFile = os.path.join('..', 'PyBank','Resources_PyBank', 'budget_data.csv')
 
+#open and read the csv file 
 with open(PyBankFile, 'r') as csvfile:
     PyBankData = csv.reader(csvfile, delimiter = ",")
 
@@ -18,9 +20,6 @@ with open(PyBankFile, 'r') as csvfile:
 #create list to capture change calcluation 
     avgchange = []
     monthlist = []
-
-# set the first row for calculations to be row 2 
-#     firstrow=next(PyBankData)
 
 #sum / tally up the months and total PL 
     for row in PyBankData: 
@@ -64,9 +63,7 @@ summarydetail.append(MaxChange)
 summarydetail.append(max(avgchange))
 summarydetail.append(MinChange)
 summarydetail.append(min(avgchange))
-print(summarydetail)
-
-
+# print(summarydetail)
 
 
 #Write to a file 
